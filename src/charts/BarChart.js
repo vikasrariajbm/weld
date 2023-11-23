@@ -36,7 +36,7 @@ export default function BarChart(){
     return(
 <CanvasJSChart options = {options} 
 				/* onRef={ref => this.chart = ref} */
-				/* containerProps={{ width: '100%', height: '300px' }} */
+				 containerProps={{ width: '60%', height: '300px' }} 
 			/>
     )
 }

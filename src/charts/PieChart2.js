@@ -131,6 +131,7 @@ export default class PieChart2 extends Component {
 		<div>
 			<CanvasJSChart options = {this.options} 
 				 onRef={ref => this.chart = ref}
+				 containerProps={{ height: '270px' }} 
 			/>
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
 			<button className="btn invisible" id="backButton" style={buttonStyle}>&lt; Back</button>

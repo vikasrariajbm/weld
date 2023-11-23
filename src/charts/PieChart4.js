@@ -28,13 +28,13 @@ var newVSReturningVisitorsOptions = {
 	subtitles: [{
 		text: "Click on Any Segment to Drilldown",
 		backgroundColor: "#2eacd1",
-		fontSize: 16,
+		fontSize: 0,
 		fontColor: "white",
 		padding: 5
 	}],
 	legend: {
 		fontFamily: "calibri",
-		fontSize: 14,
+		fontSize: 4,
 		itemTextFormatter: function (e) {
 			return e.dataPoint.name + ": " + Math.round(e.dataPoint.y / totalVisitors * 100) + "%";  
 		}
@@ -42,7 +42,7 @@ var newVSReturningVisitorsOptions = {
 	data: []
 };
  
-export default class PieChart extends Component {
+export default class PieChart4 extends Component {
 	constructor() {
 		super();
 		this.options = {};
@@ -131,9 +131,8 @@ export default class PieChart extends Component {
 		<div>
 			<CanvasJSChart options = {this.options} 
 				 onRef={ref => this.chart = ref}
-				 containerProps={{  height: '270px' }} 
-			
-			
+                 
+                 containerProps={{ width: '20em', height: '120px' }} 
 			/>
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
 			<button className="btn invisible" id="backButton" style={buttonStyle}>&lt; Back</button>

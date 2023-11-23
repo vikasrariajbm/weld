@@ -1,5 +1,11 @@
 .Mainss{
   background-color: #e5e9f4;;
+ 
+}
+.HeadMain{
+  margin-right: 100px;
+  margin-left: 100px;
+  
 }
 
  .BoxMain{
@@ -18,7 +24,7 @@
 
 
 .Box1{
-  width: 50%;
+  width: 70%;
    /* float: inline-start; */
   
    border: 1px solid whitesmoke; 
@@ -27,14 +33,26 @@
   
   /* max-height: min-content;  */
   box-sizing: border-box;
-  margin: 50px;
+  
+  height: fit-content;
+  margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 100px;
+  
 }
+.Box1combiner{
+   display: flex;
+   flex-direction: row;
+}
+
 .Box2{
  
-  width: 40%;
+  width: 25%;
   display: inline-block;
   border: 1px solid whitesmoke; 
-  margin: 50px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 100px;
    /* border:2px solid whitesmoke; */
 }
 
@@ -43,33 +61,44 @@
     /* justify-content: space-between; */
 }
 .Box3{
-  width: 25%;
+  width: 43%;
   /* float: inline-start; */
  
  /* border: 2px solid whitesmoke; */
  display: inline-block;
+ height: fit-content;
 
  /* max-height: min-content;  */
  box-sizing: border-box;
- margin:50px;
- margin-left: 20px;
+ margin-top: 20px;
+ margin-left: 10px;
+ margin-right: 10px;
+ margin-bottom: 20px;
+ 
  border: 1px solid whitesmoke; 
 }
 .Box4{
-  width: 40%;
+  width: 22.5%;
   display: inline-block;
   /* margin-left: 150px;
 
   margin-top: 50px; */
-  margin: 50px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 100px;
   border: 1px solid whitesmoke; 
+  margin-bottom: 20px;
 }
 
 .Box5{
   width: 20%;
+  max-width: fit-content;
  
-  margin: 50px;
+  margin-left: 100px;
+  margin-top: 20px;
   border: 1px solid whitesmoke; 
+  height: fit-content;
  
+  margin-bottom: 20px;
 }
 
