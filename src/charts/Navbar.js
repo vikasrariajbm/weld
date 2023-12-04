@@ -1,39 +1,158 @@
 import React from 'react'
 import "./Navbar.css";
-export default function Navbar() {
+import { useState, useEffect } from "react";
+
+import 'react-datepicker/dist/react-datepicker.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import DatePicker from 'react-datepicker';
+export default function Navbar({ sendDataToParent ,masterParamText}) {
+
+  const [selectedTab, setSelectedTab] = useState("today");
+  const [masterValue, setmasterValue] = useState("A");
+  const [customDate, setCustomDate] = useState({
+    customStartDate : null,
+    customEndDate : null
+  });
+  const [showDatePickers, setShowDatePickers] = useState(false);
+
+
+  const handleCustomDateChange = (date, keyName) => {
+      setCustomDate((prev)=>({
+        ...prev,
+        [keyName] : date
+      }));
+    
+  };
+
+  const handleButtonClick = () => {
+    setShowDatePickers(true);
+  };
+
+  const handleCustomDateSubmit = () => {
+    // Handle submission with selected customStartDate and customEndDate
+     setShowDatePickers(false); // Close the date pickers after submission
+    sendDataToParent((prev)=>({
+      ...prev,
+      startTime:customDate.customStartDate.getTime(),
+      endTime: customDate.customEndDate.getTime(),
+    }));
+  };
+
+useEffect(() => {
+  sendDataToParent((prev)=>({
+    ...prev,
+    masterValue : masterValue,
+  })); 
+}, [masterValue])
+
+
+
+
+  const getTimestampWeekAgo = () => {
+    const currentDate = new Date();
+    const oneWeekAgo = new Date(currentDate.getTime() - 7 * 24 * 60 * 60 * 1000);
+    return Math.floor(oneWeekAgo.getTime() / 1000);
+  }
+
+  const getTimestampMonthAgo = () => {
+    const currentDate = new Date();
+    const oneMonthAgo = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, currentDate.getDate());
+    return Math.floor(oneMonthAgo.getTime() / 1000);
+  }
+
+ 
+  const config = {
+    "today": {
+      startTime: new Date().setHours(0, 0, 0),
+     endTime: new Date().setHours(23, 59, 59),
+    },
+    "week": {
+      startTime: getTimestampWeekAgo(),
+      endTime: new Date().setHours(23, 59, 59),
+     
+    },
+    "month": {
+      startTime: getTimestampMonthAgo(),
+      endTime: new Date().setHours(23, 59, 59),
+    }
+
+  }
+
+
+
+
+  const handleTabChange = (selectedTab) => { 
+    setSelectedTab(selectedTab);
+    const {startTime, endTime} = config[selectedTab]
+  sendDataToParent((prev)=>({
+    ...prev,
+    startTime,
+    endTime
+  }))
+
+ 
+  };
+
+
   return (
     <>
-        <div className='Minsss my-1'>
+      <div className='Minsss my-1'>
         <div className='parag'>
-      <p>Line Wise Element</p>
+          <p>{masterParamText}</p>
+        </div>
+
+        <div className='box1'>
+        
+          <div className="dropdown">
+            <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {masterValue}
+            </button>
+            <ul className="dropdown-menu">
+              <li><a className="dropdown-item" onClick={() => setmasterValue("A")} href="#">A</a></li>
+              <li><a className="dropdown-item" onClick={() => setmasterValue("B")} href="#">B</a></li>
+              <li><a className="dropdown-item" onClick={() => setmasterValue("C")} href="#">C</a></li>
+            </ul>
+          </div>
+
+
+
+          <div className="btunn-group" role="group" >
+            <button type="button" onClick={() => handleTabChange("today")} style={{ backgroundColor: selectedTab === 'today' ? 'blue' : 'white' }} className="btn1 ">Today</button>
+            <button type="button" onClick={() => handleTabChange("week")} style={{ backgroundColor: selectedTab === 'week' ? 'blue' : 'white' }} className="btn1 ">Week</button>
+            <button type="button" onClick={() => handleTabChange("month")} style={{ backgroundColor: selectedTab === 'month' ? 'blue' : 'white' }} className="btn1 ">Month</button>
+            <button type="button" onClick={handleButtonClick} style={{ backgroundColor: selectedTab === 'custom' ? 'blue' : 'white' }} className="btn1 ">Custom</button>
+            {showDatePickers && (
+        <div>
+          <label>Start Date:</label>
+          <DatePicker
+            selected={customDate.customStartDate}
+            name='customStartDate'
+            onChange={(date) => handleCustomDateChange(date,"customStartDate")}
+            selectsStart
+            customStartDate={customDate.customStartDate}
+            customEndDate={customDate.customEndDate}
+          />
+          <label>End Date:</label>
+          <DatePicker
+            selected={customDate.customEndDate}
+            onChange={(date) => handleCustomDateChange(date,"customEndDate")}
+            selectsEnd
+            name='customEndDate'
+            customStartDate={customDate.customStartDate}
+            customEndDate={customDate.customEndDate}
+            minDate={customDate.customStartDate}
+          />
+          <button onClick={handleCustomDateSubmit}>Submit</button>
+        </div>
+      )}
+          </div>
+
+        </div>
+
       </div>
-
-       <div className='box1'>
-      <div className="dropdown">
-  <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown link
-  </a>
-
-  <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><a className="dropdown-item" href="#">Action</a></li>
-    <li><a className="dropdown-item" href="#">Another action</a></li>
-    <li><a className="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
- 
-
-
-      <div className="btunn-group" role="group" >
-  <button type="button" className="btn1 ">Today</button>
-  <button type="button" className="btn1 ">Week</button>
-  <button type="button" className="btn1 ">Month</button>
-  <button type="button" className="btn1 ">Custom</button>
-</div>
-
-</div>
-
-    </div>
-    <hr />
+      <hr />
     </>
 
   )
