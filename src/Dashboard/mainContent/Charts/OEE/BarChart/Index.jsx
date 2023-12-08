@@ -161,14 +161,24 @@ export default class Planned_Vs_Actual_Chart extends React.Component {
     this.state = {
       series: [
         {
-          name: "Website Blog",
+          name: "Availibilty",
           type: "column",
-          data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160],
+          data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
+        },
+        {
+          name: "Performance",
+          type: "column",
+          data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+        },
+        {
+          name: "Quality",
+          type: "column",
+          data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
         },
         {
           name: "Social Media",
           type: "line",
-          data: [230, 42, 35, 27, 43, 262, 17, 31, 242, 22, 102, 16],
+          data: [20, 42, 35, 27, 43, 22, 17, 31, 22, 22, 10, 16],
         },
       ],
       options: {
@@ -180,8 +190,8 @@ export default class Planned_Vs_Actual_Chart extends React.Component {
           width: [0, 4],
         },
         dataLabels: {
-          enabled: true,
-          enabledOnSeries: [1],
+          enabled: false,
+          enabledOnSeries: [0],
         },
         labels: [
           "01 Jan 2001",
@@ -194,8 +204,6 @@ export default class Planned_Vs_Actual_Chart extends React.Component {
           "08 Jan 2001",
           "09 Jan 2001",
           "10 Jan 2001",
-          "11 Jan 2001",
-          "12 Jan 2001",
         ],
         xaxis: {
           type: "datetime",
