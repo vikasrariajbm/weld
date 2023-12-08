@@ -4,6 +4,25 @@ import Select from "react-select";
 import CustomDateRange from "./customDateRange/Index";
 import { getTimestampByRangeTab } from "../../utils";
 
+const customStyles = {
+  control: (provided, state) => ({
+    ...provided,
+    minHeight: "30px", // Adjust the height of the control
+    borderRadius: "12px",
+    maxHeight: "35px",
+    border: state.isFocused ? "1px solid #00bcd4" : "1px solid #ced4da",
+    boxShadow: state.isFocused ? "0 0 0 1px #00bcd4" : "none",
+  }),
+  dropdownIndicator: (provided) => ({
+    ...provided,
+    padding: "4px", // Adjust the padding of the dropdown indicator
+  }),
+  indicatorSeparator: (provided) => ({
+    ...provided,
+    margin: "4px", // Adjust the margin of the indicator separator
+  }),
+};
+
 export default function TimeRangeTabs({
   handleFilterOptionsChange,
   masterParamValue,
@@ -74,8 +93,9 @@ export default function TimeRangeTabs({
   return (
     <React.Fragment>
       <div className="row">
-        <div className="col-sm-4 mt-1">
+        <div className="col-sm-4">
           <Select
+            styles={customStyles}
             placeholder={masterParamValue.toLocaleUpperCase()}
             options={masterOptions}
             value={selectedMasterValue}

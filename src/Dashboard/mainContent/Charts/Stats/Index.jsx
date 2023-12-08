@@ -5,8 +5,8 @@ export default function Stats({ title, value }) {
     <div
       style={{
         width: "100%",
-        marginTop: "20px",
-        padding: "20px",
+        marginBottom: "10px",
+        padding: "10px",
         border: "1px solid gray",
         borderRadius: "10px",
       }}
@@ -16,19 +16,19 @@ export default function Stats({ title, value }) {
         <div className="col-sm-10">
           <div
             style={{
-              border: "1px solid gray",
+              border: "0.1px solid gray",
               borderRadius: "20px",
             }}
           >
             <div
               style={{
                 width: `${value}%`,
-                height: "15px",
+                height: "10px",
                 borderRadius: "20px",
+                border: "1px solid white",
                 backgroundColor: value >= 50 ? "green" : "skyBlue",
                 textAlign: "center",
-                lineHeight: "30px",
-                color: "black",
+                lineHeight: "10px",
               }}
             ></div>
           </div>

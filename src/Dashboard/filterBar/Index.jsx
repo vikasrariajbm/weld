@@ -9,7 +9,7 @@ export default function DashboardFilterBar({
     <React.Fragment>
       <div className="row">
         <div className="col-sm-3">
-          <h4>{masterParamText}</h4>
+          <h5 style={{ letterSpacing: "0.8px" }}>{masterParamText}</h5>
         </div>
         <div className="col-sm-2"></div>
         <div className="col-sm-7">

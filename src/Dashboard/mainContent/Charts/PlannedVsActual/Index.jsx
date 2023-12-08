@@ -13,12 +13,23 @@ export default function Planned_Vs_Actual_Chart() {
     chart: {
       type: "bar",
       height: 400,
+      toolbar: {
+        show: false,
+      },
+    },
+    legend: {
+      show: true,
+      itemMargin: {
+        horizontal: 18,
+        vertical: 10,
+      },
     },
     plotOptions: {
       bar: {
         horizontal: false,
         columnWidth: "37%",
         endingShape: "rounded",
+        distributed: true,
       },
     },
     dataLabels: {
@@ -26,24 +37,42 @@ export default function Planned_Vs_Actual_Chart() {
     },
     stroke: {
       show: true,
-      width: 1,
+      width: 4,
       colors: ["transparent"],
     },
     xaxis: {
-      categories: ["Feb", "Mar", "Apr"],
+      title: {
+        text: "Nomenclature of Presses",
+      },
+      categories: ["Actual ", "Ideal", "Plan"],
+    },
+    subtitle: {
+      text: "Planned Vs Actual",
+      align: "left",
+      margin: 10,
+      offsetX: 0,
+      offsetY: 0,
+      floating: false,
+      style: {
+        fontSize: "16px",
+        fontWeight: 800,
+        fontFamily: undefined,
+        color: "gray",
+      },
     },
     yaxis: {
       title: {
         text: "Avg, Strokes Per Day (x1000)",
       },
+      // min: 0,
+      // tickAmount: 5,
     },
     fill: {
       opacity: 1,
     },
   };
-
   return (
-    <ReactApexChart options={options} series={series} type="bar" height={400} />
+    <ReactApexChart options={options} series={series} type="bar" height={360} />
   );
 }
 

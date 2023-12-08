@@ -1,16 +1,15 @@
 .sort-tabs {
   display: flex;
-  row-gap: 10px;
   column-gap: 20px;
   justify-content: right;
 }
 
 .sort-tab {
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 5px 14px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 12px;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
@@ -28,6 +27,13 @@
 }
 
 .chart_container {
+  max-height: 380px !important;
+  border-radius: 15px;
+  border: 2px solid rgb(248, 244, 244);
+  padding: 5px;
+}
+.bottom_chart_container {
+  max-height: 340px;
   border-radius: 15px;
   border: 2px solid rgb(248, 244, 244);
   background-color: #ffffff;
@@ -45,7 +51,8 @@
 }
 
 .stats_container {
-  min-width: 29%;
+  min-width: 25%;
+  max-width: 27%;
 }
 
 .downtime_chart {
@@ -97,23 +104,17 @@
   gap: 20px;
 }
 
+.downtime_chart {
+  max-width: 40%;
+}
+
 .downtime_label_value_container {
   display: flex;
   gap: 10px;
   justify-items: center;
   align-items: center;
-  min-height: 33%;
-  min-width: 40%;
   font-size: 15px;
   font-weight: 600;
   color: black;
-  padding: 40px;
-}
-.main_chart_container {
-  min-width: 60%;
-  padding: 20px;
-}
-
-.quality_chart_container {
-  padding: 20px;
+  padding: 40px 20px;
 }

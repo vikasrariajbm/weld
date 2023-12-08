@@ -1,15 +1,19 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 
-export default function GaugeChart({ chartLabel, chartValue }) {
+export default function GaugeChart({ chartLabel, chartValue, chartColor }) {
   const options = {
     chart: {
+      height: 280,
       type: "radialBar",
     },
+    colors: [chartColor],
     plotOptions: {
       radialBar: {
         hollow: {
-          size: "70%",
+          margin: 0,
+          size: "60%",
+          background: "transparent",
         },
         dataLabels: {
           name: {
@@ -24,7 +28,12 @@ export default function GaugeChart({ chartLabel, chartValue }) {
         },
       },
     },
-    // labels: [chartLabel],
+    fill: {
+      type: "solid",
+    },
+    stroke: {
+      lineCap: "round",
+    },
   };
 
   const series = [chartValue];
@@ -42,7 +51,7 @@ export default function GaugeChart({ chartLabel, chartValue }) {
           options={options}
           series={series}
           type="radialBar"
-          height={150}
+          height={140}
         />
       </div>
     </div>
