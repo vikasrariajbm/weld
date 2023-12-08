@@ -1,85 +1,78 @@
-.Mainss{
+.Mainss {
   background-color: #e5e9f4;
   padding-top: 20px;
   padding-bottom: 20px;
- 
 }
-.HeadMain{
+.HeadMain {
   margin-right: 100px;
   margin-left: 100px;
-  
 }
 
- .BoxMain{
+.BoxMain {
   /* border: 3px solid red; */
-  display: flex ;
+  display: flex;
   /* justify-content:  space-between;  */
-    max-height: 40vw;
-  
- 
+  max-height: 40vw;
 }
 
-.Box1helper{
+.Box1helper {
   height: 30px;
   background-color: rgb(212, 212, 242);
 }
 
-
-.Box1{
+.Box1 {
   width: 70%;
-   /* float: inline-start; */
-  
-   border: 1px solid whitesmoke; 
-   background-color: white;
+  /* float: inline-start; */
+
+  border: 1px solid whitesmoke;
+  background-color: white;
   display: inline-block;
-  
+
   /* max-height: min-content;  */
   box-sizing: border-box;
-  
+
   height: fit-content;
   margin-top: 20px;
-    margin-right: 10px;
-    margin-left: 100px;
-  
+  margin-right: 10px;
+  margin-left: 100px;
 }
-.Box1combiner{
-   display: flex;
-   flex-direction: row;
+.Box1combiner {
+  display: flex;
+  flex-direction: row;
 }
 
-.Box2{
- 
+.Box2 {
   width: 25%;
   display: inline-block;
-  border: 1px solid whitesmoke; 
+  border: 1px solid whitesmoke;
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 100px;
-   /* border:2px solid whitesmoke; */
+  /* border:2px solid whitesmoke; */
 }
 
-.BoxMain2{
-    display: flex;
-    /* justify-content: space-between; */
+.BoxMain2 {
+  display: flex;
+  /* justify-content: space-between; */
 }
-.Box3{
+.Box3 {
   width: 43%;
   /* float: inline-start; */
- 
- /* border: 2px solid whitesmoke; */
- display: inline-block;
- height: fit-content;
 
- /* max-height: min-content;  */
- box-sizing: border-box;
- margin-top: 20px;
- margin-left: 10px;
- margin-right: 10px;
- margin-bottom: 20px;
- 
- border: 1px solid whitesmoke; 
+  /* border: 2px solid whitesmoke; */
+  display: inline-block;
+  height: fit-content;
+
+  /* max-height: min-content;  */
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+
+  border: 1px solid whitesmoke;
 }
-.Box4{
+.Box4 {
   width: 22.5%;
   display: inline-block;
   /* margin-left: 150px;
@@ -88,19 +81,18 @@
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 100px;
-  border: 1px solid whitesmoke; 
+  border: 1px solid whitesmoke;
   margin-bottom: 20px;
 }
 
-.Box5{
+.Box5 {
   width: 20%;
   max-width: fit-content;
- 
+
   margin-left: 100px;
   margin-top: 20px;
-  border: 1px solid whitesmoke; 
+  border: 1px solid whitesmoke;
   height: fit-content;
- 
+
   margin-bottom: 20px;
 }
-

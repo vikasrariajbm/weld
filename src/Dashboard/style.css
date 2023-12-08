@@ -1,0 +1,119 @@
+.sort-tabs {
+  display: flex;
+  row-gap: 10px;
+  column-gap: 20px;
+  justify-content: right;
+}
+
+.sort-tab {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.sort-tab.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.charts_container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap !important;
+  gap: 10px 20px !important;
+}
+
+.chart_container {
+  border-radius: 15px;
+  border: 2px solid rgb(248, 244, 244);
+  background-color: #ffffff;
+  padding: 5px;
+}
+
+.oee_chart {
+  min-width: 70%;
+  max-width: 73%;
+}
+
+.planned_vs_actual_chart {
+  min-width: 25%;
+  max-width: 25%;
+}
+
+.stats_container {
+  min-width: 29%;
+}
+
+.downtime_chart {
+  min-width: 38%;
+}
+
+.quality_chart {
+  min-width: 29%;
+}
+
+.oee_chart_container {
+  display: flex;
+  gap: 10px;
+}
+.oee_bar_chart_container {
+  min-width: 75%;
+}
+.oee_gauge_chart_container {
+  min-width: 25%;
+}
+.gauge_chart_container {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.gauge_chart_label_container {
+  min-width: 30%;
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+}
+.label_container {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4d4a4a;
+}
+.unit_container {
+  font-size: 10px;
+  font-weight: 300;
+  color: rgb(77, 74, 74);
+}
+.gauge_chart_bar_container {
+  min-width: 70%;
+}
+
+.downtime_chart_container {
+  display: flex;
+  gap: 20px;
+}
+
+.downtime_label_value_container {
+  display: flex;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  min-height: 33%;
+  min-width: 40%;
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+  padding: 40px;
+}
+.main_chart_container {
+  min-width: 60%;
+  padding: 20px;
+}
+
+.quality_chart_container {
+  padding: 20px;
+}
