@@ -4,15 +4,17 @@ import Planned_Vs_Actual_Chart from "./Charts/PlannedVsActual/Index";
 import Quality_chart from "./Charts/Quality/Index";
 import Downtime_Chart from "./Charts/Downtime/Index";
 import Stats from "./Charts/Stats/Index";
+import LoadingSpinner from "./LoadingSpinner/Index";
 
-export default function Dashboard_Main_Container() {
+export default function Dashboard_Main_Container({ isLoading }) {
   const data = [
     { y: 15, label: "MTBF" },
     { y: 55, label: "MTTR" },
     { y: 30, label: "Machine Breakdown" },
   ];
   return (
-    <div className="charts_container">
+    <div className={`charts_container ${isLoading ? "blur" : ""}`}>
+      {isLoading && <LoadingSpinner />}
       <div className="oee_chart chart_container">
         <OeeChart />
       </div>

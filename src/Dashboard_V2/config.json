@@ -1,0 +1,4 @@
+{
+  "timeRangeTabOption": ["today", "week", "month", "custom"],
+  "dashboardTabOption": ["line", "machine"]
+}
